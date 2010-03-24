@@ -1,8 +1,8 @@
 /*
 * lascii85.c
-* ascii85 encoding and decoding for Lua 5.0
+* ascii85 encoding and decoding for Lua 5.1
 * Luiz Henrique de Figueiredo <lhf@tecgraf.puc-rio.br>
-* 19 Nov 2003 01:04:02
+* 23 Mar 2010 22:25:18
 * This code is hereby placed in the public domain.
 */
 
@@ -12,7 +12,7 @@
 #include "lauxlib.h"
 
 #define MYNAME		"ascii85"
-#define MYVERSION	MYNAME " library for " LUA_VERSION " / Nov 2003"
+#define MYVERSION	MYNAME " library for " LUA_VERSION " / Mar 2010"
 
 #define uint unsigned int
 
@@ -36,7 +36,7 @@ static void encode(luaL_Buffer *b, uint c1, uint c2, uint c3, uint c4, int n)
 static int Lencode(lua_State *L)		/** encode(s) */
 {
  size_t l;
- const unsigned char* s=(const unsigned char*)luaL_checklstring(L,1,&l);
+ const unsigned char *s=(const unsigned char*)luaL_checklstring(L,1,&l);
  luaL_Buffer b;
  int n;
  luaL_buffinit(L,&b);
@@ -70,7 +70,7 @@ static void decode(luaL_Buffer *b, int c1, int c2, int c3, int c4, int c5, int n
 static int Ldecode(lua_State *L)		/** decode(s) */
 {
  size_t l;
- const char* s=luaL_checklstring(L,1,&l);
+ const char *s=luaL_checklstring(L,1,&l);
  luaL_Buffer b;
  int n=0;
  char t[5];
@@ -113,7 +113,7 @@ static int Ldecode(lua_State *L)		/** decode(s) */
  return 0;
 }
 
-static const luaL_reg R[] =
+static const luaL_Reg R[] =
 {
 	{ "encode",	Lencode	},
 	{ "decode",	Ldecode	},
@@ -122,7 +122,7 @@ static const luaL_reg R[] =
 
 LUALIB_API int luaopen_ascii85(lua_State *L)
 {
- luaL_openlib(L,MYNAME,R,0);
+ luaL_register(L,MYNAME,R);
  lua_pushliteral(L,"version");			/** version */
  lua_pushliteral(L,MYVERSION);
  lua_settable(L,-3);

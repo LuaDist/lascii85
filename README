@@ -1,21 +1,20 @@
-This is an ascii85 library for Lua 5.0. Ascii85 is a format for coding binary
-data with text, introduced in Postscript and used in PDF. It is similar to but
-more efficient than the Base64 used in MIME.
+This is an ascii85 library for Lua 5.1. For information on ascii85 see
+	http://en.wikipedia.org/wiki/Ascii85
 
-To try this Lua library, edit Makefile to reflect your installation of Lua.
-Then run make. This will build lascii85.so and run a simple test. If everything
-is ok, install lascii85.so and ascii85.lua in some official place. You may want
-to edit ascii85.lua to change the default value of SOPATH (you can also set the
-environment variable LUA_SOPATH at run time).
+To try the library, just edit Makefile to reflect your installation of Lua and
+then run make. This will build the library and run a simple test. For detailed
+installation instructions, see
+	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/install.html
 
-Here is a brief explanation of the files in this package:
-  lascii85.c        ascii85 library
-  ascii85.lua       support code
-  test.lua          test code
-
-There is no manual but the library is simple and intuitive. There are two
-functions: encode and decode. The examples in test.lua show the library in
-action.
+There is no manual but the library is simple and intuitive; see the summary
+below. Read also test.lua, which shows the library in action.
 
 This code is hereby placed in the public domain.
 Please send comments, suggestions, and bug reports to lhf@tecgraf.puc-rio.br .
+
+-------------------------------------------------------------------------------
+
+ascii85 library:
+ decode(s) 	 encode(s) 	 version 
+
+-------------------------------------------------------------------------------

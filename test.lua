@@ -1,5 +1,7 @@
 -- test ascii85 library
 
+require"ascii85"
+
 print(ascii85.version)
 print""
 
@@ -37,3 +39,5 @@ test"xyz"
 
 print""
 print(ascii85.version)
+
+-- eof
