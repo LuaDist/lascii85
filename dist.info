@@ -1,0 +1,14 @@
+--- This file is part of LuaDist project
+
+name = "lascii85"
+version = "5.1"
+
+desc = "An ASCII85 library for Lua. Ascii85 is a form of binary-to-text encoding developed by Adobe Systems."
+author = "Luiz Henrique de Figueiredo"
+license = "Public domain"
+url = "http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lascii85"
+maintainer = "Peter Drahoš"
+
+depends = {
+	"lua ~> 5.1"
+}
