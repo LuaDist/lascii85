@@ -1,0 +1,28 @@
+type = "x86_64"
+arch = "Ubuntu"
+author = "Luiz Henrique de Figueiredo"
+depends = {
+[[lua ~> 5.1]],
+}
+
+desc = "An ASCII85 library for Lua. Ascii85 is a form of binary-to-text encoding developed by Adobe Systems."
+version = "5.1"
+maintainer = "Peter Drahoš"
+files = {
+Runtime = {
+[[lib/lua/ascii85.so]],
+}
+,
+Data = {
+[[share/lascii85/README]],
+}
+,
+Test = {
+[[share/lascii85/test/test.lua]],
+}
+,
+}
+
+license = "Public domain"
+name = "lascii85"
+url = "http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/#lascii85"
